@@ -1,9 +1,22 @@
-//
-//  MainCoordinator.swift
-//  ImgurDemo
-//
-//  Created by Adrian Kwiatkowski 2 on 09/03/2020.
-//  Copyright © 2020 Adrian Kwiatkowski. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class MainCoordinator: Coordinator {
+    
+    internal var navigationController: UINavigationController
+
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        navigationController.navigationBar.prefersLargeTitles = true
+    }
+
+    func start() {
+        let viewController = MainViewController(coordinator: self)
+        navigationController.pushViewController(viewController, animated: false)
+    }
+    
+    func showError(with text: String) {
+        let alert = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        navigationController.present(alert, animated: true)
+    }
+}

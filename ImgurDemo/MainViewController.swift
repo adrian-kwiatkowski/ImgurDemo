@@ -1,9 +1,20 @@
-//
-//  MainViewController.swift
-//  ImgurDemo
-//
-//  Created by Adrian Kwiatkowski 2 on 09/03/2020.
-//  Copyright © 2020 Adrian Kwiatkowski. All rights reserved.
-//
+import UIKit
 
-import Foundation
+class MainViewController: UIViewController {
+    
+    // MARK: - PRIVATE PROPERTIES
+    
+    private let coordinator: Coordinator
+    
+    // MARK: - INIT
+    
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+        view.backgroundColor = .red
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

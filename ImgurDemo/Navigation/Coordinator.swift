@@ -1,9 +1,8 @@
-//
-//  Coordinator.swift
-//  ImgurDemo
-//
-//  Created by Adrian Kwiatkowski 2 on 09/03/2020.
-//  Copyright © 2020 Adrian Kwiatkowski. All rights reserved.
-//
+import UIKit
 
-import Foundation
+protocol Coordinator: AnyObject {
+    var navigationController: UINavigationController { get }
+    
+    func start()
+    func showError(with text: String)
+}
