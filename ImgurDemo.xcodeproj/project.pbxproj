@@ -15,6 +15,7 @@
 		DA26ACBD2417EB45006BB7D4 /* AccountImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACBC2417EB45006BB7D4 /* AccountImagesView.swift */; };
 		DA26ACC02417F378006BB7D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DA26ACBF2417F378006BB7D4 /* SnapKit */; };
 		DA26ACC2241801A7006BB7D4 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC1241801A7006BB7D4 /* ImageCollectionViewCell.swift */; };
+		DA26ACC524180561006BB7D4 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */; };
 		DA6F81302416DCAE006418E5 /* AccountImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6F812F2416DCAE006418E5 /* AccountImagesViewController.swift */; };
 		DA7138CC2416D8D800BEA649 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7138CB2416D8D800BEA649 /* Coordinator.swift */; };
 		DA7138CE2416D8E800BEA649 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7138CD2416D8E800BEA649 /* MainCoordinator.swift */; };
@@ -42,6 +43,7 @@
 		DA26ACBA2417E9BE006BB7D4 /* AccountImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImagesViewModel.swift; sourceTree = "<group>"; };
 		DA26ACBC2417EB45006BB7D4 /* AccountImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImagesView.swift; sourceTree = "<group>"; };
 		DA26ACC1241801A7006BB7D4 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		DA6F812F2416DCAE006418E5 /* AccountImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImagesViewController.swift; sourceTree = "<group>"; };
 		DA7138CB2416D8D800BEA649 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DA7138CD2416D8E800BEA649 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DA26ACC32418054C006BB7D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DA7138C92416D7D200BEA649 /* Defaults */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +152,7 @@
 			children = (
 				DA7138C92416D7D200BEA649 /* Defaults */,
 				DA7138CA2416D8B800BEA649 /* Navigation */,
+				DA26ACC32418054C006BB7D4 /* Extensions */,
 				DA6F812F2416DCAE006418E5 /* AccountImagesViewController.swift */,
 				DA26ACBA2417E9BE006BB7D4 /* AccountImagesViewModel.swift */,
 				DA26ACBC2417EB45006BB7D4 /* AccountImagesView.swift */,
@@ -320,6 +331,7 @@
 				DAE47A462416D49F0022D73A /* SceneDelegate.swift in Sources */,
 				DA26ACBB2417E9BE006BB7D4 /* AccountImagesViewModel.swift in Sources */,
 				DA6F81302416DCAE006418E5 /* AccountImagesViewController.swift in Sources */,
+				DA26ACC524180561006BB7D4 /* UIAlertController+Extensions.swift in Sources */,
 				DA26ACBD2417EB45006BB7D4 /* AccountImagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

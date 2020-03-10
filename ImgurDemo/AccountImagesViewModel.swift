@@ -1,11 +1,12 @@
 import UIKit
 import RxRelay
 
-struct AccountImagesViewModel {
+class AccountImagesViewModel: NSObject {
     
     public let images: BehaviorRelay<[UIImage]> = BehaviorRelay(value: [])
     
-    init() {
+    override init() {
+        super.init()
         requestData()
     }
 
@@ -14,4 +15,16 @@ struct AccountImagesViewModel {
             images.accept([image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image])
         }
     }
+}
+
+extension AccountImagesViewModel: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+        print(image.size)
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AccountImagesViewModel: UINavigationControllerDelegate {
+    
 }

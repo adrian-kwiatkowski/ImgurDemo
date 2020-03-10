@@ -5,14 +5,14 @@ import RxSwift
 class AccountImagesViewController: UIViewController {
     
     // MARK: - PRIVATE PROPERTIES
-    private let coordinator: Coordinator
+    private let coordinator: MainCoordinator
     private let viewModel: AccountImagesViewModel
     private let mainView: AccountImagesView
     private let disposeBag = DisposeBag()
     
     // MARK: - INIT
     
-    init(viewModel: AccountImagesViewModel = AccountImagesViewModel(), coordinator: Coordinator) {
+    init(viewModel: AccountImagesViewModel = AccountImagesViewModel(), coordinator: MainCoordinator) {
         self.viewModel = viewModel
         self.coordinator = coordinator
         self.mainView = AccountImagesView()
@@ -29,6 +29,7 @@ class AccountImagesViewController: UIViewController {
     
     private func setupUI() {
         title = "Imgur Demo"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         view.addSubview(mainView)
         
         mainView.snp.makeConstraints {
@@ -40,5 +41,9 @@ class AccountImagesViewController: UIViewController {
         viewModel.images.bind(to: mainView.collectionView.rx.items(cellIdentifier: "ImageCollectionViewCell", cellType: ImageCollectionViewCell.self)) { (_, image, cell) in
             cell.configure(with: image)
         }.disposed(by: disposeBag)
+    }
+    
+    @objc private func addButtonTapped() {
+        coordinator.addPhotos(delegate: viewModel)
     }
 }
