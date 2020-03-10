@@ -10,7 +10,7 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let viewController = MainViewController(coordinator: self)
+        let viewController = AccountImagesViewController(coordinator: self)
         navigationController.pushViewController(viewController, animated: false)
     }
     
