@@ -1,7 +1,6 @@
 import UIKit
 import Foundation
 import PromiseKit
-import PMKFoundation
 
 struct NetworkService {
     
@@ -9,7 +8,7 @@ struct NetworkService {
     
     enum NetworkError: Error {
         case invalidURL
-        case decodingError
+        case unknown
     }
     
     func fetchImages() -> Promise<Welcome> {
@@ -30,7 +29,7 @@ struct NetworkService {
 
         URLSession.shared.dataTask(with: request) { data, _, error in
           guard let data = data, let result = try? JSONDecoder().decode(Welcome.self, from: data) else {
-            seal.reject(NetworkError.decodingError)
+            seal.reject(error ?? NetworkError.unknown)
             return
           }
 
