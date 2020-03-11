@@ -3,16 +3,27 @@ import RxRelay
 
 class AccountImagesViewModel: NSObject {
     
+    private let networkService: NetworkService
+    
     public let images: BehaviorRelay<[UIImage]> = BehaviorRelay(value: [])
     
-    override init() {
+    init(networkService: NetworkService = NetworkService()) {
+        self.networkService = networkService
         super.init()
-        requestData()
+        getImages()
     }
-
-    public func requestData() {
-        if let image = UIImage(named: "default") {
-            images.accept([image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image])
+    
+    func getImages() {
+        networkService.fetchImages()
+            .done { [weak self] in
+                let newImages = $0.data.map { $0.link }
+                print(newImages)
+                if let image = UIImage(named: "default") {
+                    self?.images.accept([image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image])
+                }
+        }
+        .catch { error in
+            print(error.localizedDescription)
         }
     }
 }

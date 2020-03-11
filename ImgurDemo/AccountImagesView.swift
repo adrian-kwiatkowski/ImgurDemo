@@ -26,7 +26,7 @@ class AccountImagesView: UIView {
     // MARK: - PRIVATE METHODS
     
     private func setupUI() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "Background")
         
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "ImageCollectionViewCell")
         _ = collectionView.rx.setDelegate(self)

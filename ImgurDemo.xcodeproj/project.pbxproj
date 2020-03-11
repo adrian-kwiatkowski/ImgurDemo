@@ -16,6 +16,10 @@
 		DA26ACC02417F378006BB7D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DA26ACBF2417F378006BB7D4 /* SnapKit */; };
 		DA26ACC2241801A7006BB7D4 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC1241801A7006BB7D4 /* ImageCollectionViewCell.swift */; };
 		DA26ACC524180561006BB7D4 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */; };
+		DA26ACC8241837D7006BB7D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC7241837D7006BB7D4 /* NetworkService.swift */; };
+		DA26ACCB24183859006BB7D4 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = DA26ACCA24183859006BB7D4 /* PromiseKit */; };
+		DA6D4CDF2418E7E6006FFBDC /* PMKFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = DA6D4CDE2418E7E6006FFBDC /* PMKFoundation */; };
+		DA6D4CE12418E974006FFBDC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D4CE02418E974006FFBDC /* Model.swift */; };
 		DA6F81302416DCAE006418E5 /* AccountImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6F812F2416DCAE006418E5 /* AccountImagesViewController.swift */; };
 		DA7138CC2416D8D800BEA649 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7138CB2416D8D800BEA649 /* Coordinator.swift */; };
 		DA7138CE2416D8E800BEA649 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7138CD2416D8E800BEA649 /* MainCoordinator.swift */; };
@@ -44,6 +48,8 @@
 		DA26ACBC2417EB45006BB7D4 /* AccountImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImagesView.swift; sourceTree = "<group>"; };
 		DA26ACC1241801A7006BB7D4 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		DA26ACC7241837D7006BB7D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DA6D4CE02418E974006FFBDC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DA6F812F2416DCAE006418E5 /* AccountImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImagesViewController.swift; sourceTree = "<group>"; };
 		DA7138CB2416D8D800BEA649 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DA7138CD2416D8E800BEA649 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA26ACB72417E962006BB7D4 /* RxSwift in Frameworks */,
+				DA6D4CDF2418E7E6006FFBDC /* PMKFoundation in Frameworks */,
+				DA26ACCB24183859006BB7D4 /* PromiseKit in Frameworks */,
 				DA26ACB52417E962006BB7D4 /* RxRelay in Frameworks */,
 				DA26ACB92417E962006BB7D4 /* RxCocoa in Frameworks */,
 				7692A72B402703C402F9BBA5 /* Pods_ImgurDemo.framework in Frameworks */,
@@ -104,6 +112,15 @@
 				DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA26ACC624183795006BB7D4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DA26ACC7241837D7006BB7D4 /* NetworkService.swift */,
+				DA6D4CE02418E974006FFBDC /* Model.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		DA7138C92416D7D200BEA649 /* Defaults */ = {
@@ -153,6 +170,7 @@
 				DA7138C92416D7D200BEA649 /* Defaults */,
 				DA7138CA2416D8B800BEA649 /* Navigation */,
 				DA26ACC32418054C006BB7D4 /* Extensions */,
+				DA26ACC624183795006BB7D4 /* Networking */,
 				DA6F812F2416DCAE006418E5 /* AccountImagesViewController.swift */,
 				DA26ACBA2417E9BE006BB7D4 /* AccountImagesViewModel.swift */,
 				DA26ACBC2417EB45006BB7D4 /* AccountImagesView.swift */,
@@ -193,6 +211,8 @@
 				DA26ACB62417E962006BB7D4 /* RxSwift */,
 				DA26ACB82417E962006BB7D4 /* RxCocoa */,
 				DA26ACBF2417F378006BB7D4 /* SnapKit */,
+				DA26ACCA24183859006BB7D4 /* PromiseKit */,
+				DA6D4CDE2418E7E6006FFBDC /* PMKFoundation */,
 			);
 			productName = ImgurDemo;
 			productReference = DAE47A402416D49F0022D73A /* ImgurDemo.app */;
@@ -247,6 +267,8 @@
 			packageReferences = (
 				DA26ACB32417E962006BB7D4 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				DA26ACBE2417F378006BB7D4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				DA26ACC924183859006BB7D4 /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				DA6D4CDD2418E7E6006FFBDC /* XCRemoteSwiftPackageReference "Foundation" */,
 			);
 			productRefGroup = DAE47A412416D49F0022D73A /* Products */;
 			projectDirPath = "";
@@ -324,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA26ACC8241837D7006BB7D4 /* NetworkService.swift in Sources */,
 				DA7138CC2416D8D800BEA649 /* Coordinator.swift in Sources */,
 				DAE47A442416D49F0022D73A /* AppDelegate.swift in Sources */,
 				DA26ACC2241801A7006BB7D4 /* ImageCollectionViewCell.swift in Sources */,
@@ -331,6 +354,7 @@
 				DAE47A462416D49F0022D73A /* SceneDelegate.swift in Sources */,
 				DA26ACBB2417E9BE006BB7D4 /* AccountImagesViewModel.swift in Sources */,
 				DA6F81302416DCAE006418E5 /* AccountImagesViewController.swift in Sources */,
+				DA6D4CE12418E974006FFBDC /* Model.swift in Sources */,
 				DA26ACC524180561006BB7D4 /* UIAlertController+Extensions.swift in Sources */,
 				DA26ACBD2417EB45006BB7D4 /* AccountImagesView.swift in Sources */,
 			);
@@ -613,6 +637,22 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		DA26ACC924183859006BB7D4 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.13.1;
+			};
+		};
+		DA6D4CDD2418E7E6006FFBDC /* XCRemoteSwiftPackageReference "Foundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PromiseKit/Foundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -635,6 +675,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DA26ACBE2417F378006BB7D4 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		DA26ACCA24183859006BB7D4 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA26ACC924183859006BB7D4 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+		DA6D4CDE2418E7E6006FFBDC /* PMKFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA6D4CDD2418E7E6006FFBDC /* XCRemoteSwiftPackageReference "Foundation" */;
+			productName = PMKFoundation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
