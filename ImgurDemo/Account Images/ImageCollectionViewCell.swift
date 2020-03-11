@@ -3,7 +3,7 @@ import SnapKit
 import AsyncDisplayKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
-        
+    
     private let imageNode: ASNetworkImageNode = {
         let node = ASNetworkImageNode()
         node.defaultImage = UIImage(named: "default")

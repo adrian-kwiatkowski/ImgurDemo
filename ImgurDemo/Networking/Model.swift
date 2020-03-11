@@ -1,5 +1,11 @@
-struct Welcome: Codable {
+struct ImagesResponse: Codable {
     let data: [ImageData]
+    let success: Bool
+    let status: Int
+}
+
+struct SingleImageResponse: Codable {
+    let data: ImageData
     let success: Bool
     let status: Int
 }
@@ -7,4 +13,5 @@ struct Welcome: Codable {
 struct ImageData: Codable {
     let id: String
     let link: String
+    let deletehash: String
 }

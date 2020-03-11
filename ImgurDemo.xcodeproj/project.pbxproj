@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		DA26ACC2241801A7006BB7D4 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC1241801A7006BB7D4 /* ImageCollectionViewCell.swift */; };
 		DA26ACC524180561006BB7D4 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */; };
 		DA26ACC8241837D7006BB7D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC7241837D7006BB7D4 /* NetworkService.swift */; };
+		DA6A10C52419AC0C00576BFF /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6A10C42419AC0C00576BFF /* UIImage+Extensions.swift */; };
 		DA6D4CE12418E974006FFBDC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D4CE02418E974006FFBDC /* Model.swift */; };
 		DA6F81302416DCAE006418E5 /* AccountImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6F812F2416DCAE006418E5 /* AccountImagesViewController.swift */; };
 		DA7138CC2416D8D800BEA649 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7138CB2416D8D800BEA649 /* Coordinator.swift */; };
@@ -43,6 +44,7 @@
 		DA26ACC1241801A7006BB7D4 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		DA26ACC7241837D7006BB7D4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DA6A10C42419AC0C00576BFF /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		DA6D4CE02418E974006FFBDC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DA6F812F2416DCAE006418E5 /* AccountImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountImagesViewController.swift; sourceTree = "<group>"; };
 		DA7138CB2416D8D800BEA649 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */,
+				DA6A10C42419AC0C00576BFF /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				DA26ACC8241837D7006BB7D4 /* NetworkService.swift in Sources */,
 				DA7138CC2416D8D800BEA649 /* Coordinator.swift in Sources */,
 				DAE47A442416D49F0022D73A /* AppDelegate.swift in Sources */,
+				DA6A10C52419AC0C00576BFF /* UIImage+Extensions.swift in Sources */,
 				DA26ACC2241801A7006BB7D4 /* ImageCollectionViewCell.swift in Sources */,
 				DA7138CE2416D8E800BEA649 /* MainCoordinator.swift in Sources */,
 				DAE47A462416D49F0022D73A /* SceneDelegate.swift in Sources */,
