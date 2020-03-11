@@ -5,7 +5,7 @@ class AccountImagesViewModel: NSObject {
     
     private let networkService: NetworkService
     
-    public let images: BehaviorRelay<[UIImage]> = BehaviorRelay(value: [])
+    public let images: BehaviorRelay<[String]> = BehaviorRelay(value: [])
     
     init(networkService: NetworkService = NetworkService()) {
         self.networkService = networkService
@@ -17,10 +17,7 @@ class AccountImagesViewModel: NSObject {
         networkService.fetchImages()
             .done { [weak self] in
                 let newImages = $0.data.map { $0.link }
-                print(newImages)
-                if let image = UIImage(named: "default") {
-                    self?.images.accept([image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image, image])
-                }
+                self?.images.accept(newImages)
         }
         .catch { error in
             print(error.localizedDescription)

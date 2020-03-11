@@ -7,5 +7,10 @@ target 'ImgurDemo' do
   use_frameworks!
 
   # Pods for OmniAPI
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+  pod "PromiseKit", "~> 6.8"
+  #pod "Texture"
   pod "SwiftLint"
 end

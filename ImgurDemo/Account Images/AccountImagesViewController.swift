@@ -38,8 +38,8 @@ class AccountImagesViewController: UIViewController {
     }
     
     private func bindUI() {
-        viewModel.images.bind(to: mainView.collectionView.rx.items(cellIdentifier: "ImageCollectionViewCell", cellType: ImageCollectionViewCell.self)) { (_, image, cell) in
-            cell.configure(with: image)
+        viewModel.images.bind(to: mainView.collectionView.rx.items(cellIdentifier: "ImageCollectionViewCell", cellType: ImageCollectionViewCell.self)) { (_, imageURL, cell) in
+            cell.configure(with: imageURL)
         }.disposed(by: disposeBag)
     }
     

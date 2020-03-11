@@ -3,21 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7692A72B402703C402F9BBA5 /* Pods_ImgurDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C46F81C31BF544A293B22F /* Pods_ImgurDemo.framework */; };
-		DA26ACB52417E962006BB7D4 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = DA26ACB42417E962006BB7D4 /* RxRelay */; };
-		DA26ACB72417E962006BB7D4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DA26ACB62417E962006BB7D4 /* RxSwift */; };
-		DA26ACB92417E962006BB7D4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DA26ACB82417E962006BB7D4 /* RxCocoa */; };
 		DA26ACBB2417E9BE006BB7D4 /* AccountImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACBA2417E9BE006BB7D4 /* AccountImagesViewModel.swift */; };
 		DA26ACBD2417EB45006BB7D4 /* AccountImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACBC2417EB45006BB7D4 /* AccountImagesView.swift */; };
-		DA26ACC02417F378006BB7D4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DA26ACBF2417F378006BB7D4 /* SnapKit */; };
 		DA26ACC2241801A7006BB7D4 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC1241801A7006BB7D4 /* ImageCollectionViewCell.swift */; };
 		DA26ACC524180561006BB7D4 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC424180561006BB7D4 /* UIAlertController+Extensions.swift */; };
 		DA26ACC8241837D7006BB7D4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA26ACC7241837D7006BB7D4 /* NetworkService.swift */; };
-		DA26ACCB24183859006BB7D4 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = DA26ACCA24183859006BB7D4 /* PromiseKit */; };
 		DA6D4CE12418E974006FFBDC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6D4CE02418E974006FFBDC /* Model.swift */; };
 		DA6F81302416DCAE006418E5 /* AccountImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6F812F2416DCAE006418E5 /* AccountImagesViewController.swift */; };
 		DA7138CC2416D8D800BEA649 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7138CB2416D8D800BEA649 /* Coordinator.swift */; };
@@ -68,12 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA26ACB72417E962006BB7D4 /* RxSwift in Frameworks */,
-				DA26ACCB24183859006BB7D4 /* PromiseKit in Frameworks */,
-				DA26ACB52417E962006BB7D4 /* RxRelay in Frameworks */,
-				DA26ACB92417E962006BB7D4 /* RxCocoa in Frameworks */,
 				7692A72B402703C402F9BBA5 /* Pods_ImgurDemo.framework in Frameworks */,
-				DA26ACC02417F378006BB7D4 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,19 +196,13 @@
 				DAE47A3D2416D49F0022D73A /* Frameworks */,
 				DAE47A3E2416D49F0022D73A /* Resources */,
 				DA7138CF2416DACF00BEA649 /* ShellScript */,
+				3E020C8C4A9A73A02967EE5D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ImgurDemo;
-			packageProductDependencies = (
-				DA26ACB42417E962006BB7D4 /* RxRelay */,
-				DA26ACB62417E962006BB7D4 /* RxSwift */,
-				DA26ACB82417E962006BB7D4 /* RxCocoa */,
-				DA26ACBF2417F378006BB7D4 /* SnapKit */,
-				DA26ACCA24183859006BB7D4 /* PromiseKit */,
-			);
 			productName = ImgurDemo;
 			productReference = DAE47A402416D49F0022D73A /* ImgurDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -269,11 +253,6 @@
 				Base,
 			);
 			mainGroup = DAE47A372416D49F0022D73A;
-			packageReferences = (
-				DA26ACB32417E962006BB7D4 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				DA26ACBE2417F378006BB7D4 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				DA26ACC924183859006BB7D4 /* XCRemoteSwiftPackageReference "PromiseKit" */,
-			);
 			productRefGroup = DAE47A412416D49F0022D73A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,6 +303,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E020C8C4A9A73A02967EE5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImgurDemo/Pods-ImgurDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImgurDemo/Pods-ImgurDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImgurDemo/Pods-ImgurDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA7138CF2416DACF00BEA649 /* ShellScript */ = {
@@ -623,61 +619,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		DA26ACB32417E962006BB7D4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.0;
-			};
-		};
-		DA26ACBE2417F378006BB7D4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		DA26ACC924183859006BB7D4 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mxcl/PromiseKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.13.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DA26ACB42417E962006BB7D4 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DA26ACB32417E962006BB7D4 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		DA26ACB62417E962006BB7D4 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DA26ACB32417E962006BB7D4 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		DA26ACB82417E962006BB7D4 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DA26ACB32417E962006BB7D4 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		DA26ACBF2417F378006BB7D4 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DA26ACBE2417F378006BB7D4 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		DA26ACCA24183859006BB7D4 /* PromiseKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DA26ACC924183859006BB7D4 /* XCRemoteSwiftPackageReference "PromiseKit" */;
-			productName = PromiseKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DAE47A382416D49F0022D73A /* Project object */;
 }
