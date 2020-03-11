@@ -5,7 +5,7 @@ class AccountImagesViewModel: NSObject {
     
     private let networkService: NetworkService
     
-    public let images: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+    public let images: BehaviorRelay<[URL]> = BehaviorRelay(value: [])
     
     init(networkService: NetworkService = NetworkService()) {
         self.networkService = networkService
@@ -16,7 +16,7 @@ class AccountImagesViewModel: NSObject {
     func getImages() {
         networkService.fetchImages()
             .done { [weak self] in
-                let newImages = $0.data.map { $0.link }
+                let newImages = $0.data.compactMap { URL(string: $0.link) }
                 self?.images.accept(newImages)
         }
         .catch { error in
@@ -33,6 +33,4 @@ extension AccountImagesViewModel: UIImagePickerControllerDelegate {
     }
 }
 
-extension AccountImagesViewModel: UINavigationControllerDelegate {
-    
-}
+extension AccountImagesViewModel: UINavigationControllerDelegate {}

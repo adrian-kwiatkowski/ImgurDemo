@@ -11,6 +11,6 @@ target 'ImgurDemo' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod "PromiseKit", "~> 6.8"
-  #pod "Texture"
+  pod "Texture"
   pod "SwiftLint"
 end

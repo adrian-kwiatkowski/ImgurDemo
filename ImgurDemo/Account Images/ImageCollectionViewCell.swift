@@ -1,18 +1,23 @@
 import UIKit
 import SnapKit
+import AsyncDisplayKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
         
-    private let imageView: UIImageView = UIImageView()
+    private let imageNode: ASNetworkImageNode = {
+        let node = ASNetworkImageNode()
+        node.defaultImage = UIImage(named: "default")
+        node.placeholderEnabled = true
+        node.contentMode = .scaleAspectFill
+        return node
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        addSubview(imageView)
-        imageView.contentMode = .scaleAspectFill
         clipsToBounds = true
         
-        imageView.snp.makeConstraints {
+        addSubnode(imageNode)        
+        imageNode.view.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
@@ -21,8 +26,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with imageURL: String) {
-        imageView.image = UIImage(named: "default")
-        print(imageURL)
+    func configure(with imageURL: URL) {
+        imageNode.url = imageURL
     }
 }
