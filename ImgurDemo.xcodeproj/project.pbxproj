@@ -23,6 +23,8 @@
 		DAE47A4D2416D4A00022D73A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAE47A4C2416D4A00022D73A /* Assets.xcassets */; };
 		DAE47A502416D4A00022D73A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE47A4E2416D4A00022D73A /* LaunchScreen.storyboard */; };
 		DAE47A5B2416D4A00022D73A /* ImgurDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE47A5A2416D4A00022D73A /* ImgurDemoTests.swift */; };
+		DAF45AD6241C01E5000423CD /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF45AD5241C01E5000423CD /* RequestBuilder.swift */; };
+		DAF45AD8241C0207000423CD /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF45AD7241C0207000423CD /* UrlBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		DAE47A562416D4A00022D73A /* ImgurDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImgurDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE47A5A2416D4A00022D73A /* ImgurDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurDemoTests.swift; sourceTree = "<group>"; };
 		DAE47A5C2416D4A00022D73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAF45AD5241C01E5000423CD /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		DAF45AD7241C0207000423CD /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				DA26ACC7241837D7006BB7D4 /* NetworkService.swift */,
+				DAF45AD7241C0207000423CD /* UrlBuilder.swift */,
+				DAF45AD5241C01E5000423CD /* RequestBuilder.swift */,
 				DA6D4CE02418E974006FFBDC /* Model.swift */,
 			);
 			path = Networking;
@@ -352,7 +358,9 @@
 				DA26ACC8241837D7006BB7D4 /* NetworkService.swift in Sources */,
 				DA7138CC2416D8D800BEA649 /* Coordinator.swift in Sources */,
 				DAE47A442416D49F0022D73A /* AppDelegate.swift in Sources */,
+				DAF45AD6241C01E5000423CD /* RequestBuilder.swift in Sources */,
 				DA6A10C52419AC0C00576BFF /* UIImage+Extensions.swift in Sources */,
+				DAF45AD8241C0207000423CD /* UrlBuilder.swift in Sources */,
 				DA26ACC2241801A7006BB7D4 /* ImageCollectionViewCell.swift in Sources */,
 				DA7138CE2416D8E800BEA649 /* MainCoordinator.swift in Sources */,
 				DAE47A462416D49F0022D73A /* SceneDelegate.swift in Sources */,
