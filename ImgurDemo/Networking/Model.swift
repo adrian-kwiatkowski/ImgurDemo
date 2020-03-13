@@ -10,6 +10,12 @@ struct SingleImageResponse: Codable {
     let status: Int
 }
 
+struct DeleteImageResponse: Codable {
+    let data: Bool
+    let success: Bool
+    let status: Int
+}
+
 struct ImageData: Codable {
     let id: String
     let link: String

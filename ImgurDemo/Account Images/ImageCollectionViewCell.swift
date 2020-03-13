@@ -26,7 +26,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with imageURL: URL) {
-        imageNode.url = imageURL
+    func configure(with imageData: ImageData) {
+        imageNode.url = URL(string: imageData.link)
     }
 }

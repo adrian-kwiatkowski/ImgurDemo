@@ -78,4 +78,35 @@ struct NetworkService {
             }.resume()
         }
     }
+    
+    func deleteImage(with deleteHash: String) -> Promise<DeleteImageResponse> {
+        return Promise { seal in
+            var components = URLComponents()
+            components.scheme = "https"
+            components.host = "api.imgur.com"
+            components.path = "/3/image/"
+
+            guard let url = components.url else {
+                seal.reject(NetworkError.invalidURL)
+                return
+            }
+            
+            let newUrl =  url.appendingPathComponent(deleteHash)
+            var request = URLRequest(url: newUrl)
+            
+            request.httpMethod = "DELETE"
+            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            
+            URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, let result = try? JSONDecoder().decode(DeleteImageResponse.self, from: data) else {
+                    seal.reject(error ?? NetworkError.unknown)
+                    return
+                }
+                
+                seal.fulfill(result)
+            }.resume()
+        }
+    }
 }

@@ -5,7 +5,7 @@ class AccountImagesViewModel: NSObject {
     
     private let networkService: NetworkService
     
-    public let images: BehaviorRelay<[URL]> = BehaviorRelay(value: [])
+    public let images: BehaviorRelay<[ImageData]> = BehaviorRelay(value: [])
     
     init(networkService: NetworkService = NetworkService()) {
         self.networkService = networkService
@@ -16,9 +16,8 @@ class AccountImagesViewModel: NSObject {
     func getImages() {
         networkService.fetchImages()
             .done { [weak self] in
-                let newImages = $0.data.compactMap { URL(string: $0.link) }
-                print("\(newImages.count) images")
-                self?.images.accept(newImages)
+                print("\($0.data.count) images")
+                self?.images.accept($0.data)
         }
         .catch { error in
             print(error.localizedDescription)
@@ -27,6 +26,16 @@ class AccountImagesViewModel: NSObject {
     
     func upload(_ image: UIImage) {
         networkService.upload(image)
+            .done { [weak self] _ in
+                self?.getImages()
+        }
+        .catch { error in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteImage(with deleteHash: String) {
+        networkService.deleteImage(with: deleteHash)
             .done { [weak self] _ in
                 self?.getImages()
         }

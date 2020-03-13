@@ -38,12 +38,30 @@ class AccountImagesViewController: UIViewController {
     }
     
     private func bindUI() {
-        viewModel.images.bind(to: mainView.collectionView.rx.items(cellIdentifier: "ImageCollectionViewCell", cellType: ImageCollectionViewCell.self)) { (_, imageURL, cell) in
-            cell.configure(with: imageURL)
+        viewModel.images.bind(to: mainView.collectionView.rx.items(cellIdentifier: "ImageCollectionViewCell", cellType: ImageCollectionViewCell.self)) { (_, imageData, cell) in
+            cell.configure(with: imageData)
         }.disposed(by: disposeBag)
+        
+        mainView.collectionView.rx.modelSelected(ImageData.self)
+            .subscribe(onNext: { [weak self] in
+                self?.deletePhoto(with: $0.deletehash)
+            }).disposed(by: disposeBag)
     }
     
     @objc private func addButtonTapped() {
         coordinator.addPhotos(delegate: viewModel)
+    }
+    
+    private func deletePhoto(with deleteHash: String) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let libraryAction = UIAlertAction(title: "Delete photo", style: .destructive) { [weak self] _ in
+            self?.viewModel.deleteImage(with: deleteHash)
+        }
+
+        alertController.addAction(libraryAction)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alertController, animated: true)
     }
 }

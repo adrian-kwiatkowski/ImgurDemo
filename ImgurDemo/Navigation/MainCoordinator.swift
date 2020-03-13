@@ -33,7 +33,7 @@ class MainCoordinator: Coordinator {
         navigationController.present(alertController, animated: true)
     }
     
-    func photoLibrary(delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate) {
+    private func photoLibrary(delegate: UIImagePickerControllerDelegate & UINavigationControllerDelegate) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = delegate
                 pickerController.allowsEditing = true
