@@ -6,6 +6,7 @@ class AccountImagesViewModel: NSObject {
     private let networkService: NetworkService
     
     public let images: BehaviorRelay<[ImageData]> = BehaviorRelay(value: [])
+    public let isLoading: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
     init(networkService: NetworkService = NetworkService()) {
         self.networkService = networkService
@@ -14,8 +15,10 @@ class AccountImagesViewModel: NSObject {
     }
     
     func getImages() {
+        isLoading.accept(true)
         networkService.fetchImages()
             .done { [weak self] in
+                self?.isLoading.accept(false)
                 print("\($0.data.count) images")
                 self?.images.accept($0.data)
         }
@@ -25,8 +28,10 @@ class AccountImagesViewModel: NSObject {
     }
     
     func upload(_ image: UIImage) {
+        isLoading.accept(true)
         networkService.upload(image)
             .done { [weak self] _ in
+                self?.isLoading.accept(false)
                 self?.getImages()
         }
         .catch { error in
@@ -35,8 +40,10 @@ class AccountImagesViewModel: NSObject {
     }
     
     func deleteImage(with deleteHash: String) {
+        isLoading.accept(true)
         networkService.deleteImage(with: deleteHash)
             .done { [weak self] _ in
+                self?.isLoading.accept(false)
                 self?.getImages()
         }
         .catch { error in

@@ -46,6 +46,11 @@ class AccountImagesViewController: UIViewController {
             .subscribe(onNext: { [weak self] in
                 self?.deletePhoto(with: $0.deletehash)
             }).disposed(by: disposeBag)
+        
+        viewModel.isLoading.subscribe(onNext: { [weak self] in
+            self?.mainView.loaderView.isHidden = !$0
+            self?.navigationItem.rightBarButtonItem?.isEnabled = !$0
+        }).disposed(by: disposeBag)
     }
     
     @objc private func addButtonTapped() {

@@ -12,6 +12,14 @@ class AccountImagesView: UIView {
         return view
     }()
     
+    let loaderView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.style = .whiteLarge
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        view.startAnimating()
+        return view
+    }()
+    
     // MARK: - INIT
     
     init() {
@@ -31,12 +39,18 @@ class AccountImagesView: UIView {
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "ImageCollectionViewCell")
         _ = collectionView.rx.setDelegate(self)
         addSubview(collectionView)
+        addSubview(loaderView)
         
         setupConstraints()
     }
     
     private func setupConstraints() {
         collectionView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.bottom.equalToSuperview()
+        }
+        
+        loaderView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
             $0.top.bottom.equalToSuperview()
         }
